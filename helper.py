@@ -174,7 +174,8 @@ def play_uploaded_video(conf, model):
             while vid_cap.isOpened():
                 success, image = vid_cap.read()
                 if success:
-                    _display_detected_frames(conf, model, st_frame, image, is_display_tracker, tracker)
+                    # Remove the is_display_tracker and tracker parameters
+                    _display_detected_frames(conf, model, st_frame, image)
                 else:
                     vid_cap.release()
                     break
@@ -184,4 +185,5 @@ def play_uploaded_video(conf, model):
         finally:
             if os.path.exists(temp_file_path):
                 os.remove(temp_file_path)
+
 
