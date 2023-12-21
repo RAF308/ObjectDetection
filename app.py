@@ -11,7 +11,7 @@ import helper
 
 # Setting page layout
 st.set_page_config(
-    page_title="Object Detection using YOLOv8",
+    page_title="Object Detection Computer Lab",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -27,8 +27,7 @@ st.sidebar.header("ML Model Config")
 model_type = st.sidebar.radio(
     "Select Task", ['Detection'])
 
-# Set confidence directly to 40
-confidence = 0.4  # This corresponds to 40%
+confidence = 0.2  
 
 # Selecting Detection Or Segmentation
 if model_type == 'Detection':
